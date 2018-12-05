@@ -185,7 +185,11 @@
 
   function onFrame(event) {
     for(var i = 0; i < circles.length; i++ ){
-      circles[i].scale(.99).fillColor.hue += 1;
+      circles[i].scale(.9).fillColor.hue += 1;
+      if(circles[i].area < 1){
+        circles[i].remove;
+        circles.splice(i, 1);
+      }
     }
   }
 
