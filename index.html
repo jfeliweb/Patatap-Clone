@@ -7,11 +7,17 @@
   <script type="text/javascript" src="paper-full.js"></script>
   <!-- <script type="text/javascript" src="script.js"></script> -->
   <script type="text/paperscript" canvas="myCanvas">
-    var myCircle = new Path.Circle(new Point(300, 70), 50);
-    myCircle.fillColor = 'red';
 
-    var myCircle2 = new Path.Circle(new Point(400, 200), 70);
-    myCircle2.fillColor = 'green';
+    function onKeyDown(event) {
+    //Create random points within window
+    var maxPoint = new Point(view.size.width, view.size.height);
+    var randomPoint = Point.random();
+    var point = maxPoint * randomPoint;
+    
+    // When a key is pressed, set the content of the text item:
+    new Path.Circle(point, 50).fillColor = 'green';
+  }
+    
   </script>
 </head>
 
